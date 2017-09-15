@@ -31,10 +31,10 @@ function handleRender(req, res) {
 
   console.log('req url is', req.url);
   if (req.url === '/test') {
-    Hello.fetchData()
-    .then(() => console.log('data fetch ran'))
-    .then(() => renderFunc())
-    .catch(console.error)
+    // Hello.fetchData()
+    // .then(() => console.log('data fetch ran'))
+    // .then(() => renderFunc())
+    // .catch(console.error)
   } else {
     renderFunc();
   }
