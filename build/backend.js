@@ -9007,7 +9007,7 @@ module.exports = getActiveElement;
 var app = __webpack_require__(87);
 var db = __webpack_require__(204);
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 var server = app.listen(port, function (err) {
   if (err) throw err;
