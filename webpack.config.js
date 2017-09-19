@@ -1,8 +1,8 @@
-var webpack = require('webpack');
-var path = require('path');
-var fs = require('fs');
+const webpack = require('webpack');
+const path = require('path');
+const fs = require('fs');
 
-var nodeModules = {};
+const nodeModules = {};
 fs.readdirSync('node_modules')
   .filter(function(x) {
     return ['.bin'].indexOf(x) === -1;
@@ -11,7 +11,7 @@ fs.readdirSync('node_modules')
     nodeModules[mod] = 'commonjs ' + mod;
   });
 
-module.exports = {
+module.exports = [{
   entry: './server/index.js',
   target: 'node',
   output: {
@@ -32,4 +32,58 @@ module.exports = {
       }
     ]
   }
-}
+}, {
+  entry: './server/js/components/app.js',
+  output: {
+    path: __dirname,
+    filename: './build/frontend-2.js',
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015', 'stage-2']
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.svg$|\.ttf?|\.woff$|\.woff2|\.eof|\.eot/,
+        loader: 'file-loader',
+      },
+    ],
+  },
+}]
+
+
+// {
+//   entry: './server/js/components/app.js',
+//   output: {
+//     path: path.join(__dirname, 'build'),
+//     filename: 'frontend-2.js'
+//   },
+//   devtool: 'source-map',
+//   // externals: nodeModules,
+//   module: {
+//     loaders: [
+//       {
+//         test: /jsx?$/,
+//         exclude: /(node_modules|bower_components)/,
+//         loader: 'babel-loader',
+//         query: {
+//           presets: ['react', 'es2015', 'stage-2']
+//         }
+//       }
+//     ]
+//   }
+// }

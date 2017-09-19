@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import history from '../history';
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar navbar-inverse navbar-fixed-top" role="navigation" style={{backgroundColor: 'transparent', borderStyle: 'none'}}>
@@ -17,15 +19,16 @@ class Navbar extends React.Component {
         <div className="collapse navbar-collapse" style={{textAlign: 'center'}}>
             <ul className="nav navbar-nav" style={{textAlign: 'center', width: '100%'}}>
                 <li className="btn-link-color" style={{float: 'none', display: 'inline-block'}}>
-                  <a id="top-link" className="btn project-top-navbar-link-glow" style={{color: '#63a0d4'}} href="/about">
+                  <Link to="/" id="top-link" className="btn project-top-navbar-link-glow" style={{color: '#63a0d4'}}>
                     <span className="glyphicon glyphicon-th-large" />
-                  </a>
+                  </Link>
+                </li>
+
+                <li className="btn-link-color" style={{float: 'none', display: 'inline-block'}}>
+                  <Link to="/about">About</Link>
                 </li>
                 <li className="btn-link-color" style={{float: 'none', display: 'inline-block'}}>
-                  <a className="btn project-top-navbar-link-glow" style={{color: '#ffffff'}} href="/about">About</a>
-                </li>
-                <li className="btn-link-color" style={{float: 'none', display: 'inline-block'}}>
-                  <a className="btn project-top-navbar-link-glow" style={{color: '#ffffff'}} href="/projects">Projects</a>
+                  <Link to="/projects">State</Link>
                 </li>
             </ul>
         </div>
@@ -38,10 +41,10 @@ class Navbar extends React.Component {
 }
 
 
-const mapState = (state, ownProps) => ({
-});
+// const mapState = (state, ownProps) => ({
+// });
 
-const mapDispatch = dispatch => ({
-});
+// const mapDispatch = dispatch => ({
+// });
 
-export default connect(mapState, mapDispatch)(Navbar);
+// export default connect(mapState, mapDispatch)(Navbar);

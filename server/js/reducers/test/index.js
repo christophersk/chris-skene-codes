@@ -1,5 +1,3 @@
-const { Test } = require('../../../db/models');
-
 // ACTION TYPES
 const SET_TEST = 'SET_TEST';
 
@@ -9,7 +7,7 @@ export const setTest = test => ({
   test
 })
 
-export default function reducer (state = 'foo', action) {
+export default function reducer (state = 'default', action) {
   switch (action.type) {
     case SET_TEST:
       return action.test;
@@ -18,10 +16,4 @@ export default function reducer (state = 'foo', action) {
   }
 }
 
-// THUNK CREATORS
-export const testThunk = () => dispatch => {
-  console.log('testThunk is running');
-  return Test.findById(1)
-    .then(test => dispatch(setTest(test.name)))
-    .catch(console.error);
-}
+

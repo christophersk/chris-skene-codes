@@ -8,7 +8,7 @@ class About extends React.Component {
         <div className="row">
           <div className="col-md-8 col-md-offset-2">
             About
-            <p>Currently I am studying web development at Fullstack Academy in Chicago, focusing on NodeJS, React, Redux, and Postgres. You can check out some of my past and current work on my <a href="/projects">Projects page</a>. In addition to programming, I enjoy playing guitar and singing.</p>
+            <p>This is an application that demonstrates server-side React rendering!</p>
           </div>
         </div>
       </div>
