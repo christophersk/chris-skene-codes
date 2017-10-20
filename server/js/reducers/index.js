@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-import test from './test'
+import stateText from './test'
+import asyncText from './async'
 
-export default combineReducers({ test })
+export default combineReducers({ stateText, asyncText })

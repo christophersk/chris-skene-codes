@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // ACTION TYPES
 const SET_TEST = 'SET_TEST';
 
@@ -7,7 +9,8 @@ export const setTest = test => ({
   test
 })
 
-export default function reducer (state = 'default', action) {
+// REDUCER
+export default function reducer (state = 'this is the default state', action) {
   switch (action.type) {
     case SET_TEST:
       return action.test;
@@ -15,5 +18,3 @@ export default function reducer (state = 'default', action) {
       return state;
   }
 }
-
-

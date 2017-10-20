@@ -1,23 +1,50 @@
 import React from 'react';
-import { Router } from 'react-router';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
-import Hello from './Hello';
+import Media from './Media';
+import Home from './Home';
+import { AnimatedRoute } from 'react-router-transition';
 
-export default class SharedRoutes extends React.Component {
-  render() {
-    console.log('root props are', this.props);
-    return (
-      <div>
-          <div>
-          <Route path="*" component={Navbar} />
-          <Route exact path="/" component={Hello} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/projects" component={Projects} />
-          </div>
-      </div>
-    );
-  }
+export default function SharedRoutes() {
+  return (
+    <div>
+      <AnimatedRoute
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        path="*"
+        component={Navbar}
+      />
+      <AnimatedRoute
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        exact path="/"
+        component={Home}
+      />
+      <AnimatedRoute
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        exact path="/about"
+        component={About}
+      />
+      <AnimatedRoute
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        exact path="/projects"
+        component={Projects}
+      />
+      <AnimatedRoute
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        exact path="/media"
+        component={Media}
+      />
+    </div>
+  );
 }

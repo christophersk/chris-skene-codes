@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import rootReducer from '../reducers';
-import Routes from './Routes';
-import Simple from './Simple';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import SharedRoutes from './SharedRoutes';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
+import history from '../history';
+import { Router } from 'react-router';
 
 const preloadedState = window.__PRELOADED_STATE__;
 
@@ -17,7 +18,9 @@ const store = createStore(rootReducer, preloadedState, composeWithDevTools(apply
 
 ReactDOM.render(
   <Provider store={store}>
-      <Routes />
+    <Router history={history}>
+      <SharedRoutes />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

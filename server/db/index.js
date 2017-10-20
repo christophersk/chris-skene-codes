@@ -2,6 +2,6 @@
 
 const db = require('./db');
 
-require('./models');
+// require('./models');
 
 module.exports = db;

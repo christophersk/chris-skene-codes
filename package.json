@@ -1,5 +1,5 @@
 {
-  "name": "react-server",
+  "name": "personal-site",
   "version": "1.0.0",
   "description": "",
   "main": "build/backend.js",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
     "express": "^4.15.4",
     "morgan": "^1.8.2",
@@ -20,6 +21,9 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-router-transition": "^1.1.1",
+    "react-scroll-to-component": "^1.0.1",
+    "react-scrollchor": "^4.0.0",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",

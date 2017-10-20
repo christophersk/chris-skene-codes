@@ -36,7 +36,7 @@ module.exports = [{
   entry: './server/js/components/app.js',
   output: {
     path: __dirname,
-    filename: './build/frontend-2.js',
+    filename: './build/frontend.js',
   },
   devtool: 'source-map',
   module: {
@@ -64,26 +64,3 @@ module.exports = [{
     ],
   },
 }]
-
-
-// {
-//   entry: './server/js/components/app.js',
-//   output: {
-//     path: path.join(__dirname, 'build'),
-//     filename: 'frontend-2.js'
-//   },
-//   devtool: 'source-map',
-//   // externals: nodeModules,
-//   module: {
-//     loaders: [
-//       {
-//         test: /jsx?$/,
-//         exclude: /(node_modules|bower_components)/,
-//         loader: 'babel-loader',
-//         query: {
-//           presets: ['react', 'es2015', 'stage-2']
-//         }
-//       }
-//     ]
-//   }
-// }
